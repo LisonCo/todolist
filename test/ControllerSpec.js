@@ -74,12 +74,9 @@ describe("controller", function () {
 
   describe("routing", function () {
     it("should show all entries without a route", function () {
-      // initialize le modèle avec une fake to do
-      // s'assurer qu'au lancement de l'application les lignes s'affichent bien
       var todo = { title: "my todo" };
       setUpModel([todo]);
 
-      // route par défaut, teste que ça s'affiche
       subject.setView("");
 
       expect(view.render).toHaveBeenCalledWith("showEntries", [todo]);
@@ -87,7 +84,7 @@ describe("controller", function () {
 
     it('should show all entries without "all" route', function () {
       var todo = { title: "my todo" };
-      setUpModel([todo]); // mock les données
+      setUpModel([todo]); 
 
       subject.setView("#/");
 
@@ -95,7 +92,6 @@ describe("controller", function () {
     });
 
     it("should show active entries", function () {
-      // TODO: write test mettre un modèle to do avec la propriété active à true ou false
       var todo = { title: "my todo", completed: false };
       setUpModel([todo]);
 
